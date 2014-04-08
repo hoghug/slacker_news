@@ -60,3 +60,14 @@ small {
   font-size:0.8em;
 }
 
+#comments {
+  list-style-type: none;
+  width:500px;
+}
+
+#comments .comment {
+  display: block;
+  padding: 2%;
+  width:70%;
+}
+

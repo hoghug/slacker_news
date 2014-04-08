@@ -31,8 +31,7 @@
   <li>
     <span class="post-ranking"><%= p.ranking %></span>
     <%= p.title %> <small>(posted by <%= p.user.name %>)</small>
-    <span data-toggle="modal" data-target="#newComment-<%= p.id %>" class="glyphicon glyphicon-comment"></span>
-    <a href="posts/<%= p.id %>/comments"><span class="glyphicon glyphicon-th-list"></span></a>
+    <span class="glyphicon glyphicon-comment"></span>
     <a data-upvalue="1" class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span></a>
     <a data-downvalue="-1" class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span></a>
     <div class="vote-form">
@@ -43,36 +42,27 @@
         <%# f.submit(:class => "btn btn-primary") %>
       <% end %>
   </div>
-
-  <div class="modal fade" id="newComment-<%= p.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">New Comment</h4>
-        </div>
-        <div class="modal-body">
-          <%= form_for [@user, p, @comment] do |f| %>
-            <div class="form-group">
-              <%= f.hidden_field :user_id, :value => @user.id %>
-              <%= f.hidden_field :post_id, :value => p.id %>
-              <%= f.text_area :message, :rows => '5', :class => 'form-control', :placeholder => "Enter Comment..." %>
-            </div>
-            <%= f.submit(:class => "btn btn-primary") %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-
   </li>
 <% end %>
 </ul>
 
 
-
-
-
-
-
+<div class="modal fade" id="newCommentButton" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">New User</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@user, @post, ] do |f| %>
+          <div class="form-group">
+            <%= f.text_field :name, :class => 'form-control', :placeholder => "User Name..." %>
+          </div>
+          <%= f.submit(:class => "btn btn-primary") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
