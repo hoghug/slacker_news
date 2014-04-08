@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: slacker_news_development
+
+test:
+  adapter: postgresql
+  database: slacker_news_test
+production:
+
+  adapter: postgresql
+  encoding: unicode
+  database: slacker_news_production
+  pool: 5
+  username: slacker_news
+  password:

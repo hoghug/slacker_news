@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SlackerNews</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container main" >
+    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+        <div class="naviHeader">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navHeaderCollapse">
+              <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Slacker News</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newPostButton">post</button></a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <h1><%= flash[:notice] %><h1>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</body>
+</html>
