@@ -1,20 +1,49 @@
-.main {
-  margin-top: 65px;
+html, body, div, img, span, h1, h2, h3, h4, p, ol, ul, li {
+  margin:0;
+  padding:0;
+  border:0;
+  text-align:left;
+  font-weight:normal;
+  vertical-align:baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style-position: inside;
+}
+
+body {
+  padding:65px 0 0 0;
+  background-image: url(http://subtlepatterns.com/patterns/congruent_pentagon.png);
+}
+
+#posts-listing {
+  background-color: #F9D980;
+  list-style-type: none;
+  padding: 20px 30px;
 }
 
 .glyphicon-comment {
   color: #00BCCF;
   padding: 0 4px;
+  cursor: pointer;
 }
 
 .glyphicon-thumbs-up {
   color: green;
   padding: 0 4px;
+  cursor: pointer;
 }
 
 .glyphicon-thumbs-down {
   color: red;
   padding: 0 4px;
+  cursor: pointer;
 }
 
 .glyphicon-user {
@@ -24,5 +53,10 @@
 
 .glyphicon-pushpin {
   padding: 0 0 0 6px;
+}
+
+small {
+  color:gray;
+  font-size:0.8em;
 }
 
