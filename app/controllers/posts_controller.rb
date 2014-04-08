@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @user = User.find(params[:user_id])
     @posts = Post.all
 
     @post = Post.new
@@ -8,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-   @post = Post.new post_params
+   @post = Post.new post_param
    if @post.save
     flash[:notice] = "Post Created"
     redirect_to '/'
@@ -17,4 +18,9 @@ class PostsController < ApplicationController
     render '/'
    end
   end
+
+  private
+    def post_params
+      params.require(:post).permit(:title, :link, :date)
+    end
 end

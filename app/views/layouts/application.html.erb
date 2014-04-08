@@ -22,7 +22,8 @@
                 <li><a href="/">Slacker News</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newPostButton">post</button></a></li>
+                <li><a><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newUserButton">Sign Up<span class="glyphicon glyphicon-user"></span></button></a></li>
+                <li><a><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newPostButton">Add Post<span class="glyphicon glyphicon-pushpin"></span></button></a></li>
               </ul>
           </div>
         </div>
@@ -31,7 +32,7 @@
 
     <% if flash[:notice] %>
       <div class="flash">
-        <h1><%= flash[:notice] %><h1>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><%= flash[:notice] %></button>
       </div>
     <% end %>
 

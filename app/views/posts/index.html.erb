@@ -1,3 +1,4 @@
+<% if true  %>
 <div class="modal fade" id="newPostButton" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -6,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">New Post</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(@post) do |f| %>
+        <%= form_for [@user, @post] do |f| %>
           <div class="form-group">
             <%= f.text_field :title, :class => 'form-control', :placeholder => "Post Title..." %>
           </div>
@@ -14,6 +15,7 @@
             <%= f.text_field :link, :class => 'form-control', :placeholder => "Link Url..." %>
           </div>
           <div class="form-group">
+            <input type="hidden" name="post[ranking]" value="10">
             <input type="date" name="post[date]" class="form-control">
           </div>
           <%= f.submit(:class => "btn btn-primary") %>
@@ -22,9 +24,14 @@
     </div>
   </div>
 </div>
-
+<% end %>
 <ul>
 <% @posts.each do |p|  %>
-  <li><%= p.title %></li>
+  <li>
+    <%= p.title %>
+    <span class="glyphicon glyphicon-comment"></span>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+    <span class="glyphicon glyphicon-thumbs-down"></span>
+  </li>
 <% end %>
 </ul>

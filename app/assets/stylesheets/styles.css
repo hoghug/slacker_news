@@ -1,3 +1,28 @@
 .main {
   margin-top: 65px;
 }
+
+.glyphicon-comment {
+  color: #00BCCF;
+  padding: 0 4px;
+}
+
+.glyphicon-thumbs-up {
+  color: green;
+  padding: 0 4px;
+}
+
+.glyphicon-thumbs-down {
+  color: red;
+  padding: 0 4px;
+}
+
+.glyphicon-user {
+  padding: 0 0 0 6px;
+}
+
+
+.glyphicon-pushpin {
+  padding: 0 0 0 6px;
+}
+

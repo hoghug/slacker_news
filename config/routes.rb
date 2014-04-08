@@ -1,8 +1,9 @@
 SlackerNews::Application.routes.draw do
-  root 'posts#index'
-  resources :posts do
-    resources :comments
-    resources :votes
+  root 'users#index'
+  resources :users do
+    resources :posts do
+      resources :comments
+      resources :votes
+    end
   end
-  resources :users
 end
